@@ -6,11 +6,11 @@ var fruits = [
     { name: 'Pear', quantity: 10, ppu: 80 }
 ];
 
-document.write("Fruits: ");
+console.log("Fruits: ")
 for(var i=0; i<5; i++)
-    document.write("<br>"+fruits[i].name);
+    console.log('\n'+fruits[i].name)
 
-document.write("<br><br>Fruits whose total price is greater then 250:");
+console.log("\n\nFruits whose total price is greater then 250\n")
 for(var i=0; i<5; i++)
     if(fruits[i].quantity*fruits[i].ppu > 250)
-        document.write("<br>"+fruits[i].name+ " ");
+        console.log('\n'+fruits[i].name)
