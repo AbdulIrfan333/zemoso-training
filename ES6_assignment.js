@@ -1,20 +1,23 @@
-const fruits = ['Strawberry', 'Pineapple', 'Apple', 'Mango', 'Pear'];
-let price = [10,40,20,50,80]
-let quantity = [15,10,6,12,10]
-            
-const fruit = fruits.map((f, i) => ({name: f, Price: price[i]}));
-            
-console.log(fruit);
+class Fruit { 
+   constructor(name, price, quantity) { 
+      this.name = name; 
+      this.price = price;
+      this.quantity = quantity; 
+   }
+   get getTotal(){
+    return this.price*this.quantity
+   } 
+} 
 
-function calculatePrice(fp, q){
-                return fp * q
-}
+const fruits = [new Fruit('Strawberry',10,15), new Fruit('Pineapple',40,10), new Fruit('Apple',20,6), new Fruit('Mango',50,12), new Fruit('Pear',80,10)];
 
-let total = []
-for(var i=0;i<5;i++)
-    total[i] = calculatePrice(price[i],quantity[i]);
+console.log("Fruits:")
+for(let f of fruits) {
+   console.log(f.name) 
+ }
 
-console.log('Fruits whose price is greater then 250')
-for(var i=0; i<5; i++)
-    if(total[i] > 250)
-        console.log(fruits[i])
+console.log("\nFruits whose total is greater 250:")
+for(let f of fruits) { 
+    if(f.getTotal>250)
+      console.log(f.name) 
+ }
